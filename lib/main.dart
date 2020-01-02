@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wemeet/artist_list.dart';
+import './artist_list.dart';
 import './newest_list.dart';
 import './featured_list.dart';
 
@@ -38,18 +38,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
 
-  void click(){
-    setState(() {
+  void click() {
 
-    });
   }
 
+  void list(){
 
-
-
-  Widget list() {
-    return
-      Text('f');
   }
 
   @override
@@ -121,14 +115,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: mediaQuery.size.width * 0.25,
                     child: FlatButton(
                       child: Text('Featured'),
-                      onPressed: click,
+                      onPressed: () { ArtistList('F'); print('F_click');},
                     ),
                   ),
                   Container(
                     width: mediaQuery.size.width * 0.25,
                     child: FlatButton(
                       child: Text('Newest'),
-                      onPressed: click,
+                      onPressed: () {ArtistList('N'); print('N_click');},
                     ),
                   ),
                 ],
@@ -136,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               height: mediaQuery.size.height * 0.65,
-              child: FeaturedList(click),
+              child: null,
             ),
             Container(
               height: mediaQuery.size.height * 0.1,

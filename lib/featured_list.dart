@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FeaturedList extends StatelessWidget {
-final Function click;
 
-FeaturedList(this.click);
   @override
   Widget build(BuildContext context) {
     return Column(
