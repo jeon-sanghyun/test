@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+
 import './artist_list.dart';
-import './newest_list.dart';
-import './featured_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,21 +28,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
+  String as='asdasd';
+
+  void click(String a) {
+    as =a;
+    print(as);
     setState(() {
-      _counter++;
+      print(as);
     });
-  }
-
-
-  void click() {
-
-  }
-
-  void list(){
-
+   //  return a;
   }
 
   @override
@@ -115,23 +109,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: mediaQuery.size.width * 0.25,
                     child: FlatButton(
                       child: Text('Featured'),
-                      onPressed: () { ArtistList('F'); print('F_click');},
+                      onPressed: () {click('F');},
                     ),
                   ),
                   Container(
                     width: mediaQuery.size.width * 0.25,
                     child: FlatButton(
                       child: Text('Newest'),
-                      onPressed: () {ArtistList('N'); print('N_click');},
+                      onPressed: () {click('N');},
                     ),
                   ),
                 ],
               ),
             ),
             Container(
-              height: mediaQuery.size.height * 0.65,
-              child: null,
-            ),
+              height: mediaQuery.size.height * 0.55,
+              child:
+              ArtistList(click, as),),
+            Container(child: Text(as),),
             Container(
               height: mediaQuery.size.height * 0.1,
               color: Colors.pink,
@@ -172,11 +167,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+//      floatingActionButton: FloatingActionButton(
+//        onPressed: _incrementCounter,
+//        tooltip: 'Increment',
+//        child: Icon(Icons.add),
+      //     ),
     );
   }
 }
