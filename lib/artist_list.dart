@@ -20,9 +20,10 @@ class ArtistList extends StatelessWidget {
     } else if (list == 'N') {
       a=NewestList();
      // a = 'N click';
-    } else {
-      a = 'no click';
     }
+//    else {
+//      a = 'no click';
+//    }
     return a;
   }
 
@@ -30,7 +31,6 @@ class ArtistList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: condition(list),
-    //  Text(condition(list).toString()),
     );
   }
 }
