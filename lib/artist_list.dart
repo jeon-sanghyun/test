@@ -1,43 +1,36 @@
 import 'package:flutter/material.dart';
 
+import './featured_list.dart';
+import './newest_list.dart';
+
 class ArtistList extends StatelessWidget {
   final Function click;
-  final  list;
-  String a;
+  final list;
+  var a;
 
   ArtistList(
     this.click,
     this.list,
   );
 
-  String condition(list) {
+  Widget condition(list) {
     if (list == 'F') {
-      a = 'F click';
-      print(a);
+      a=FeaturedList();
+     // a = 'F click';
     } else if (list == 'N') {
-      a = 'N click';
-      print(a);
+      a=NewestList();
+     // a = 'N click';
     } else {
       a = 'no click';
-      print(a);
     }
-   return a;
+    return a;
   }
-
-//  String get resultcondition {
-//    String resultlist;
-//    if (list == 'F') {
-//      resultlist = 'f click';
-//    } else if (list == 'N') {
-//      resultlist = 'n click';
-//    } else {
-//      resultlist = 'no click';
-//    }
-//    return resultlist;
-//  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text(condition(list).toString()));
+    return Container(
+      child: condition(list),
+    //  Text(condition(list).toString()),
+    );
   }
 }

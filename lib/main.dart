@@ -29,13 +29,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  String as='asdasd';
+  String listselect='asdasd';
 
   void click(String a) {
-    as =a;
-    print(as);
+    listselect =a;
+  //  print(listselect);
     setState(() {
-      print(as);
+      print(listselect);
     });
    //  return a;
   }
@@ -123,10 +123,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              height: mediaQuery.size.height * 0.55,
+              height: mediaQuery.size.height * 0.65,
               child:
-              ArtistList(click, as),),
-            Container(child: Text(as),),
+              ArtistList(click, listselect),),
             Container(
               height: mediaQuery.size.height * 0.1,
               color: Colors.pink,
