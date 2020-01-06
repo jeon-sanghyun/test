@@ -8,10 +8,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // title: 'We Meet title',
       theme: ThemeData(
         primarySwatch: Colors.pink,
         primaryColor: Color(0xfff82462),
+        accentColor: Colors.amber,
+        canvasColor: Color.fromRGBO(255, 255, 255, 0.95),
+       // fontFamily: 'Raleway',
+        textTheme: ThemeData.light().textTheme.copyWith(
+              body1: TextStyle(
+                color: Color.fromRGBO(1, 1, 1, 1),
+              ),
+              body2: TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 0.7),
+              ),
+              title: TextStyle(
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+                fontWeight: FontWeight.bold,
+              ),
+            ),
       ),
       home: MyHomePage(),
     );
@@ -28,16 +43,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-  String listselect='asdasd';
+  String listselect = 'asdasd';
 
   void click(String a) {
-    listselect =a;
-  //  print(listselect);
+    listselect = a;
+    //  print(listselect);
     setState(() {
       print(listselect);
     });
-   //  return a;
+    //  return a;
   }
 
   @override
@@ -109,23 +123,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: mediaQuery.size.width * 0.25,
                     child: FlatButton(
                       child: Text('Featured'),
-                      onPressed: () {click('F');},
+                      onPressed: () {
+                        click('F');
+                      },
                     ),
                   ),
                   Container(
                     width: mediaQuery.size.width * 0.25,
                     child: FlatButton(
                       child: Text('Newest'),
-                      onPressed: () {click('N');},
+                      onPressed: () {
+                        click('N');
+                      },
                     ),
                   ),
                 ],
               ),
             ),
             Container(
+
               height: mediaQuery.size.height * 0.65,
-              child:
-              ArtistList(click, listselect),),
+              child: ArtistList(click, listselect),
+            ),
             Container(
               height: mediaQuery.size.height * 0.1,
               color: Colors.pink,
