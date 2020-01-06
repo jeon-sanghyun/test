@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './featured_list.dart';
 import './newest_list.dart';
+import './init_list.dart';
 
 class ArtistList extends StatelessWidget {
   final Function click;
@@ -21,9 +22,9 @@ class ArtistList extends StatelessWidget {
       a=NewestList();
      // a = 'N click';
     }
-//    else {
-//      a = 'no click';
-//    }
+    else {
+      a = InitList();
+    }
     return a;
   }
 
