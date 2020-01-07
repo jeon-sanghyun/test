@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './featured_list.dart';
 import './newest_list.dart';
 import './init_list.dart';
+import './rank.dart';
 
 class ArtistList extends StatelessWidget {
   final Function click;
@@ -21,6 +22,9 @@ class ArtistList extends StatelessWidget {
     } else if (list == 'N') {
       a=NewestList();
      // a = 'N click';
+    }
+    else if( list =='R') {
+      a=Rank();
     }
     else {
       a = InitList();

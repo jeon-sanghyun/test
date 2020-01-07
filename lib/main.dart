@@ -104,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
+
             Container(
               height: mediaQuery.size.height * 0.1,
               child: Row(
@@ -141,13 +142,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-
               height: mediaQuery.size.height * 0.65,
               child: ArtistList(click, listselect),
             ),
             Container(
               height: mediaQuery.size.height * 0.1,
-              color: Colors.pink,
+              color: Theme.of(context).primaryColor,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -158,12 +158,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontSize: 30,
                         fontWeight: FontWeight.bold),
                   ),
-                  Text(
-                    'Rank',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold),
+                  FlatButton(
+                    child:
+                    Text(
+                      'Rank',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize:
+                          30,
+                          fontWeight: FontWeight.bold),
+                    ), onPressed: () {click('R');},
                   ),
                   Text(
                     'My',
