@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './artist_list.dart';
+import './bottomnavibar.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,13 +29,19 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      home: MyHomePage(),
+     // home: MyHomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (ctx) => BottomNaviBar(),
+
+      },
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
+
 
   final String title;
 
@@ -57,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
+    int _selectedPageIndex = 0;
 
     return Scaffold(
       // appBar: AppBar(
@@ -142,9 +150,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              height: mediaQuery.size.height * 0.65,
+              height: mediaQuery.size.height * 0.35,
               child: ArtistList(click, listselect),
             ),
+    Container(child:   BottomNaviBar(),),
+           /*
             Container(
               height: mediaQuery.size.height * 0.1,
               color: Theme.of(context).primaryColor,
@@ -186,14 +196,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             )
+            */
           ],
         ),
+
       ),
+
 //      floatingActionButton: FloatingActionButton(
 //        onPressed: _incrementCounter,
 //        tooltip: 'Increment',
 //        child: Icon(Icons.add),
       //     ),
+
     );
   }
 }
