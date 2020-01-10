@@ -1,35 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:wemeet/discover/discover.dart';
 
-//import 'discover/artist_list.dart';
-import 'rank.dart';
+import './discover/artist_list.dart';
+import './rank.dart';
 
 class BottomNaviBar extends StatefulWidget {
 
-  final Function click;
-  final list;
-  var a;
-
-  BottomNaviBar(
-      this.click,
-      this.list,
-      );
+  BottomNaviBar();
 
   @override
-  _BottomNaviBarState createState() => _BottomNaviBarState(click, list);
+  _BottomNaviBarState createState() => _BottomNaviBarState();
 }
 
 class _BottomNaviBarState extends State<BottomNaviBar> {
+
   int selectedIndex = 0;
   List<Map<String, Object>> pages;
-  final Function click;
-  final list;
-  var a;
 
-  _BottomNaviBarState(
-      this.click,
-      this.list,
-      );
+
+  _BottomNaviBarState();
 
   MediaQueryData mediaQuery;
 
@@ -37,7 +25,7 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
   void initState() {
     pages = [
       {
-        'page': Discover(click,list,mediaQuery),
+        'page' : ArtistList(),
         'title': 'Discover',
       },
       {

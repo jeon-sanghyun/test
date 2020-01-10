@@ -10,16 +10,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyApp> {
-  String listselect = 'asdasd';
 
-  void click(String a) {
-    listselect = a;
-    //  print(listselect);
-    setState(() {
-      print(listselect);
-    });
-    //  return a;
-  }
+//  String listselect = 'asdasd';
+//
+//  void click(String a) {
+//    listselect = a;
+//    //  print(listselect);
+//    setState(() {
+//      print(listselect);
+//    });
+//    //  return a;
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,7 @@ class _MyHomePageState extends State<MyApp> {
       ),
       initialRoute: '/',
       routes: {
-        '/': (ctx) => BottomNaviBar(click, listselect),
+        '/': (ctx) => BottomNaviBar(),
       },
     );
 
@@ -153,9 +154,7 @@ class _MyHomePageState extends State<MyApp> {
 //              height: mediaQuery.size.height * 0.35,
 //              child: ArtistList(click, listselect),
 //            ),
-//            Container(
-//              child: BottomNaviBar(click,listselect),
-//            ),
+//
 //            /*
 //            Container(
 //              height: mediaQuery.size.height * 0.1,

@@ -3,27 +3,38 @@ import 'package:flutter/material.dart';
 import 'featured_list.dart';
 import 'init_list.dart';
 import 'newest_list.dart';
-import '../rank.dart';
 
-class ArtistList extends StatelessWidget {
-  final Function click;
-  final list;
-  var a;
+class ArtistList extends StatefulWidget {
 
-  ArtistList(
-    this.click,
-    this.list,
-  );
+  ArtistList();
 
-  Widget condition(list) {
-    if (list == 'F') {
+  @override
+  _ArtistListState createState() => _ArtistListState();
+}
+
+class _ArtistListState extends State<ArtistList> {
+
+  Widget a;
+
+  String listselect = 'asdasd';
+
+  void click(String b) {
+    listselect = b;
+    setState(() {
+      print(listselect);
+    });
+  }
+
+  Widget condition(click) {
+    print(listselect);
+    if (listselect == 'F') {
       a = FeaturedList();
+      print('F click');
       // a = 'F click';
-    } else if (list == 'N') {
+    } else if (listselect == 'N') {
       a = NewestList();
+      print('N click');
       // a = 'N click';
-    } else if (list == 'R') {
-      a = Rank();
     } else {
       a = InitList();
     }
@@ -32,46 +43,49 @@ class ArtistList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Container(
-        //      height: mediaQuery.size.height * 0.1,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Container(
-              //       width: mediaQuery.size.width * 0.45,
-              child: Text(
-                'Today',
-                style: TextStyle(
-                    // color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold),
+    return Column(
+      children: [
+        Container(
+          //      height: mediaQuery.size.height * 0.1,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                //       width: mediaQuery.size.width * 0.45,
+                child: Text(
+                  'Today',
+                  style: TextStyle(
+                      // color: Colors.white,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
-            Container(
-              //          width: mediaQuery.size.width * 0.25,
-              child: FlatButton(
-                child: Text('Featured'),
-                onPressed: () {
-                  click('F');
-                },
+              Container(
+                //          width: mediaQuery.size.width * 0.25,
+                child: FlatButton(
+                  child: Text('Featured'),
+                  onPressed: () {
+                    click('F');
+                  },
+                ),
               ),
-            ),
-            Container(
-              //           width: mediaQuery.size.width * 0.25,
-              child: FlatButton(
-                child: Text('Newest'),
-                onPressed: () {
-                  click('N');
-                },
+              Container(
+                //           width: mediaQuery.size.width * 0.25,
+                child: FlatButton(
+                  child: Text('Newest'),
+                  onPressed: () {
+                    click('N');
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-      //Container(
-      //  child: condition(list),
-      //)
-    ]);
+        Container(
+          height: 450,
+          child: condition(a),
+        )
+      ],
+    );
   }
 }
