@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 import './discover/artist_list.dart';
-import './rank.dart';
+import './meet/meet.dart';
+import './my/my.dart';
+import './rank/rank.dart';
 
 class BottomNaviBar extends StatefulWidget {
-
   BottomNaviBar();
 
   @override
@@ -12,10 +13,8 @@ class BottomNaviBar extends StatefulWidget {
 }
 
 class _BottomNaviBarState extends State<BottomNaviBar> {
-
   int selectedIndex = 0;
   List<Map<String, Object>> pages;
-
 
   _BottomNaviBarState();
 
@@ -25,15 +24,21 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
   void initState() {
     pages = [
       {
-        'page' : ArtistList(),
+        'page': ArtistList(),
         'title': 'Discover',
       },
       {
         'page': Rank(),
         'title': 'Rank',
       },
-      // {'page' : My,
-      // 'title': 'My',},
+      {
+        'page': My(),
+        'title': 'My',
+      },
+      {
+        'page': Meet(),
+        'title': 'Meet',
+      },
     ];
     super.initState();
   }
@@ -47,9 +52,14 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(title: Text('appbar'),),
+      appBar: AppBar(
+        title: Text('appbar'),
+      ),
       body: pages[selectedIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
+        iconSize: 24,
+        unselectedFontSize: 12,
+        type: BottomNavigationBarType.fixed,
         onTap: selectPage,
         backgroundColor: Theme.of(context).primaryColor,
         unselectedItemColor: Colors.white,
@@ -58,11 +68,39 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            title: Text('Discover', style: TextStyle(fontWeight: FontWeight.bold,),),
+            title: Text(
+              'Discover',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
-            title: Text('Rank', style: TextStyle(fontWeight: FontWeight.bold,),),
+            title: Text(
+              'Rank',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            title: Text(
+              'My',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.grade),
+            title: Text(
+              'Meet',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ],
       ),

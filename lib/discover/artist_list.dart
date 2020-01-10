@@ -26,15 +26,10 @@ class _ArtistListState extends State<ArtistList> {
   }
 
   Widget condition(click) {
-    print(listselect);
     if (listselect == 'F') {
       a = FeaturedList();
-      print('F click');
-      // a = 'F click';
     } else if (listselect == 'N') {
       a = NewestList();
-      print('N click');
-      // a = 'N click';
     } else {
       a = InitList();
     }
