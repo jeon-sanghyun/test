@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wemeet/discover/discover.dart';
 
 import './bottomnavibar.dart';
 
@@ -24,8 +23,6 @@ class _MyHomePageState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    //   final mediaQuery = MediaQuery.of(context);
-    //   int _selectedPageIndex = 0;
 
     return MaterialApp(
       theme: ThemeData(
@@ -51,17 +48,6 @@ class _MyHomePageState extends State<MyApp> {
       initialRoute: '/',
       routes: {
         '/': (ctx) => BottomNaviBar(click, listselect),
-      },
-      onGenerateRoute: (settings) {
-        print(settings.arguments);
-        return MaterialPageRoute(
-          builder: (ctx) => Discover(click, listselect),
-        );
-      },
-      onUnknownRoute: (settings) {
-        return MaterialPageRoute(
-          builder: (ctx) => Discover(click, listselect),
-        );
       },
     );
 
@@ -195,20 +181,7 @@ class _MyHomePageState extends State<MyApp> {
 //                          fontWeight: FontWeight.bold),
 //                    ), onPressed: () {click('R');},
 //                  ),
-//                  Text(
-//                    'My',
-//                    style: TextStyle(
-//                        color: Colors.white,
-//                        fontSize: 30,
-//                        fontWeight: FontWeight.bold),
-//                  ),
-//                  Text(
-//                    'Submit',
-//                    style: TextStyle(
-//                        color: Colors.white,
-//                        fontSize: 30,
-//                        fontWeight: FontWeight.bold),
-//                  ),
+//
 //                ],
 //              ),
 //            )
@@ -217,11 +190,7 @@ class _MyHomePageState extends State<MyApp> {
 //        ),
 //      ),
 
-//      floatingActionButton: FloatingActionButton(
-//        onPressed: _incrementCounter,
-//        tooltip: 'Increment',
-//        child: Icon(Icons.add),
-    //     ),
+
     //   );
   }
 }

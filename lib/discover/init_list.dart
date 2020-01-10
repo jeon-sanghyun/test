@@ -4,11 +4,11 @@ class InitList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'appbar',
-        ),
-      ),
+      //appBar: AppBar(
+       // title: Text(
+       //   'appbar',
+       // ),
+     // ),
       body: Container(
         child: Text('init list'),
       ),

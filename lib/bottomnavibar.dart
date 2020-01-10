@@ -31,13 +31,13 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
       this.list,
       );
 
-
+  MediaQueryData mediaQuery;
 
   @override
   void initState() {
     pages = [
       {
-        'page': Discover(click,list),
+        'page': Discover(click,list,mediaQuery),
         'title': 'Discover',
       },
       {
