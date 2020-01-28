@@ -54,6 +54,7 @@ class _BottomNaviBarState extends State<BottomNaviBar> {
     return Scaffold(
       appBar: AppBar(
         title: Text('appbar'),
+
       ),
       body: pages[selectedIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
